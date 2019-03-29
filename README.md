@@ -40,6 +40,7 @@ var DynamoBackup = require('dynamo-backup-to-s3');
 var backup = new DynamoBackup({
     excludedTables: ['development-table1', 'development-table2'],
     readPercentage: .5,
+    readUnits: 20, /* used when you have on-demand tables */
     bucket: 'my-backups',
     stopOnFailure: true,
     base64Binary: true,
